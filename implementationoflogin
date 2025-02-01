@@ -1,0 +1,27 @@
+import tkinter as tk 
+from tkinter import messagebox,simpledialog 
+import mysql.connector 
+import random 
+class HomePage(tk.Tk): 
+def _init_(self): 
+super()._init_() 
+self.title("Hotel Management System") 
+# Login Page 
+self.login_label = tk.Label(self, text="Login Page", font=("Arial", 14)) 
+self.login_label.pack(pady=20) 
+self.username_label = tk.Label(self, text="Username:") 
+self.username_label.pack() 
+self.username_entry = tk.Entry(self) 
+self.username_entry.pack() 
+self.password_label = tk.Label(self, text="Password:") 
+self.password_label.pack() 
+self.password_entry = tk.Entry(self, show="*") 
+self.password_entry.pack() 
+self.login_button = tk.Button(self, text="Login", command=self.login) 
+self.login_button.pack(pady=10) 
+self.room_booking_button = tk.Button(self, text="Room Booking", 
+command=self.reservation_gui) 
+self.room_booking_button.pack(pady=20) 
+self.hotel_services_button = tk.Button(self, text="Other Hotel Services", 
+command=self.book_services) 
+self.hotel_services_button.pack() 
